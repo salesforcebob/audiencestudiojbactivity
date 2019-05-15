@@ -5,56 +5,42 @@ This is a sample HTML page that can be used as a starting point for a Journey Bu
 NOTE: FILL OUT THE HEROKU_APP_NAME values below - otherwise this page WILL NOT LOAD!
 -->
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Custom Journey Builder Activity</title>
     <!-- TODO: Change HEROKU_APP_NAME to YOUR Heroku app name! This will break if ups-activity is deleted or not responsive! -->
-    <script data-main="https://<HEROKU_APP_NAME>.herokuapp.com/ixn/activities/generic-activity/js/main.js" src="https://<HEROKU_APP_NAME>.herokuapp.com/ixn/activities/generic-activity/js/require.js"></script>
-  <!-- -->
-  <script type="text/javascript">
-     function showhide(id) {
-       var e = document.getElementById(id);
-       e.style.display = (e.style.display == 'block') ? 'none' : 'block';
-     }
-  </script>  
-  
-  <style>
-  /* TODO: add your style inline here ... if you have a large block of CSS use the include that is commented out below */
-  body {
-    margin: 0px;
-    padding: 0px;
-  }
+    <script data-main="https://young-citadel-73020.herokuapp.com/ixn/activities/generic-activity/js/main.js" src="https://young-citadel-73020.herokuapp.com/ixn/activities/generic-activity/js/require.js"></script>
+    <!-- -->
+    <script type="text/javascript">
+        function showhide(id) {
+            var e = document.getElementById(id);
+            e.style.display = (e.style.display == 'block') ? 'none' : 'block';
+        }
+    </script>
 
-  #container {
-      margin: 30px;
-  }
-    
-  body {
-    /* REMOVABLE: UPS Background Gradient - example ... generator: http://angrytools.com/gradient/ */  
-    background: -moz-linear-gradient(270deg, rgba(207,181,59,1) 0%, rgba(255,255,255,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(207,181,59,1)), color-stop(100%, rgba(255,255,255,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(270deg, rgba(207,181,59,1) 0%, rgba(255,255,255,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(270deg, rgba(207,181,59,1) 0%, rgba(255,255,255,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(270deg, rgba(207,181,59,1) 0%, rgba(255,255,255,1) 100%); /* ie10+ */
-    background: linear-gradient(180deg, rgba(207,181,59,1) 0%, rgba(255,255,255,1) 100%); /* w3c */
-  }
+    <link rel="stylesheet" type="text/css" href="/assets/styles/salesforce-lightning-design-system.css" />
 
-  </style>
-  
- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+    <!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <!-- link rel="stylesheet" href="<URL to .css>" -->    
+    -->
+    <style>
+        html{
+            background-color: white !important;
+        }
+    </style>
 
     <script type="text/javascript">
-       /* Regular old Javascript can be supported here */                             
+       /* Regular old Javascript can be supported here */
     </script>
 </head>
-  
-<body> 
-  
-  <!-- Handy if you want to hide show steps on the page when not being served up in Journey Builder 
+
+<body>
+
+    <!-- Handy if you want to hide show steps on the page when not being served up in Journey Builder 
   <a href="javascript:showhide('step1')">
     Click to show/hide first div.
   </a>  
@@ -62,9 +48,60 @@ NOTE: FILL OUT THE HEROKU_APP_NAME values below - otherwise this page WILL NOT L
     Click to show/hide second div.
   </a>
   -->
-  
-<!-- TODO: Change this to be relevant for your example! -->
-<!-- form name must be genericActivity for the fields to be populated correctly --> 
+
+    <form id="genericActivity">
+        <div id="step1" class="step">
+            <div class="slds-grid slds-gutters slds-p-around_large">
+                <div class="slds-col slds-size_1-of-12 slds-align_absolute-top slds-p-top_medium">
+                    <img src="/icon-40.png" />
+                </div>
+                <div class="slds-col slds-size_11-of-12 slds-p-top_small">
+                    <div class="slds-text-heading_medium">DMP Audience
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-top_small slds-p-left_none">
+                        <div class="slds-text-body_regular">
+                            This will add the customer to a real-time DMP audience for media/ad execution. 
+                        </div>
+                </div>
+
+                <!--form-->
+               
+                <div class="slds-form-element slds-p-top_medium">
+                        <label class="slds-form-element__label" for="text-input-id-1">
+                          Description</label>
+                        <div class="slds-form-element__control">
+                                <textarea id="textarea-id-01" class="slds-textarea" placeholder="Write something..."></textarea>
+                        </div>
+                      </div>
+
+                      <div class="slds-form-element slds-p-top_medium">
+                            <label class="slds-form-element__label" for="text-input-id-1">
+                              Add Customer to DMP Audience:</label>
+                            <div class="slds-form-element__control">
+                                    <div class="slds-form-element__control">
+                                            <div class="slds-select_container">
+                                              <select class="slds-select" id="select-01">
+                                                <option value="">Please select</option>
+                                                <option>POC - Audience A</option>
+                                                <option>POC - Audience B</option>
+                                                <option>POC - Audience C</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                            </div>
+                          </div>
+
+                      
+            
+                <!--end form-->
+
+            </div>
+        </div>
+    </form>
+
+    <!-- TODO: Change this to be relevant for your example! -->
+    <!-- form name must be genericActivity for the fields to be populated correctly -->
+    <!--
 <form id="genericActivity">
     <div id="step1" class="step">
         <div class="col-xs-9">            
@@ -115,13 +152,14 @@ NOTE: FILL OUT THE HEROKU_APP_NAME values below - otherwise this page WILL NOT L
         </div>
     </div>
 </form>
-  
-<script>
+-->
+    <script>
     /* Maybe you want to do some jQuery stuff on this page? You can do it here. 
        If you want to do activities when the div is made visible, you'll need to tie
        into the isVisible event illustrated below. On this, when step 2 is made avaiable
        an isVisible event is triggered, and you can tap into it and do stuff when its caught.
-    */  
+    */
+   /*
   window.addEventListener("isVisible", function(evt) {
       console.log("Step: " + JSON.stringify(evt.detail.step) + " is now visible");
       var step = evt.detail.step;
@@ -133,9 +171,10 @@ NOTE: FILL OUT THE HEROKU_APP_NAME values below - otherwise this page WILL NOT L
         $("#confirmationMessage").html(confirmation);            
       }
   }, false);
+*/
 
-  
-</script>
+    </script>
 
 </body>
+
 </html>
